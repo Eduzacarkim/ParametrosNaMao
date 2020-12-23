@@ -12,7 +12,7 @@
         android:padding="4dp">
 
         <ImageView
-            android:id="@+id/logoView"
+            android:id="@+id/logo_view"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="8dp"
@@ -20,11 +20,11 @@
             tools:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/marcaView"
+        android:id="@+id/marca_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_toEndOf="@id/logoView"
+        android:layout_toEndOf="@id/logo_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

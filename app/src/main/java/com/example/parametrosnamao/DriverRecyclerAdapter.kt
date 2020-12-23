@@ -6,11 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.driver_card_view.view.*
 
-class DriverRecyclerAdapter : RecyclerView.Adapter<DriverViewHolder>(){
-    val driverTitles = listOf("drivertitle", "drivertitle2")
-    val driverLogosWeg = R.mipmap.logo_weg_foreground
-    val driverLogosSchineider = R.mipmap .logo_schinider_foreground
-
+class DriverRecyclerAdapter() : RecyclerView.Adapter<DriverViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DriverViewHolder {
         return  DriverViewHolder(
@@ -18,8 +14,9 @@ class DriverRecyclerAdapter : RecyclerView.Adapter<DriverViewHolder>(){
         )}
 
     override fun onBindViewHolder(holder: DriverViewHolder, position: Int) {
-        val driverTitle = driverTitles[position]
-        holder.view.driverId.text = driverTitle
+        holder.view.driver_id?.text
+
+
     }
     override fun getItemCount(): Int {
         return 2
