@@ -11,9 +11,12 @@ import com.example.parametrosnamao.MarcaRecyclerAdapter.MarcaViewHolder
 import kotlinx.android.synthetic.main.marca_card_view.view.*
 
 class MarcaRecyclerAdapter(
-    private val marca: List<String>,
-    private val logo: List<Int>
-    ) : RecyclerView.Adapter<MarcaViewHolder>() {
+    private val marca: List<String> = listOf("Weg", "Schineider", "SIEMENS"),
+    private val logo: List<Int> = listOf(R.mipmap.logo_weg_foreground, R.mipmap.logo_schinider_foreground, R.mipmap.ic_launcher_round),
+    var driver: List<String>,
+    var logoDriver: Int
+
+) : RecyclerView.Adapter<MarcaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarcaViewHolder {
         return MarcaViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.marca_card_view, parent, false))
@@ -34,6 +37,21 @@ class MarcaRecyclerAdapter(
             view.setOnClickListener{
                 val position: Int = adapterPosition
                 val intent = Intent(view.context, SecondaryActivity::class.java)
+                    if (position == 0) {
+                        driver = listOf("CFW100", "CFW500", "CFW700")
+                        logoDriver = R.mipmap.logo_weg_foreground
+                    }else{
+                        if (position == 1){
+                            driver = listOf("ALTIVAR 12", "ALTIVAR EASY 310", "ALTIVAR MACHINE ATV320", "ALTIVAR MACHINE ATV340")
+                             logoDriver = R.mipmap.logo_schinider_foreground
+                        }else{
+                            if (position == 2){
+                                 driver = listOf("SINAMICS V20", "INAMICS G120C", "SINAMICS G120", "SINAMICS G130","SINAMICS G110","SINAMICS G120D")
+                                 logoDriver = R.mipmap.ic_launcher_round
+
+                        }
+                    }
+                }
 
                 view.context.startActivity(intent)
             }

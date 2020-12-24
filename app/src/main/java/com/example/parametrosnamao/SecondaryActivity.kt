@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SecondaryActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewAdapter: DriverRecyclerAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate (saveInstanceState: Bundle?) {
@@ -16,7 +16,7 @@ class SecondaryActivity : AppCompatActivity() {
 
         viewManager = LinearLayoutManager(this)
 
-        viewAdapter = DriverRecyclerAdapter()
+        viewAdapter
 
         recyclerView = findViewById<RecyclerView>(R.id.viewDriver).apply {
             setHasFixedSize(true)
