@@ -1,10 +1,7 @@
 package com.example.parametrosnamao
 
- data class TitleInfo (val marca: String, val image: Int) {
-     override fun toString(): String {
-         return marca
-     }
- }
+ data class TitleInfo (val marca: String, val image: Int)
+
 
 data class Equipamentos (val name: String, val image1: Int){
     override fun toString(): String {
