@@ -1,24 +1,14 @@
 package com.example.parametrosnamao
 
-import android.accounts.AccountManager.get
 import android.content.Intent
-import android.content.Intent.*
-import android.icu.text.Transliterator
-import android.media.CamcorderProfile.get
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.driver_card_view.view.*
-import java.lang.reflect.Array.*
-import java.text.ParsePosition
 
-class DriverRecyclerAdapter(
-    var Driver: List<String> = listOf("Weg", "Schineider", "SIEMENS")
-//    var Logo: R.mipmap.ic_launcher_round
-) : RecyclerView.Adapter<DriverViewHolder>(){
+class DriverRecyclerAdapter() : RecyclerView.Adapter<DriverViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DriverViewHolder {
@@ -28,8 +18,8 @@ class DriverRecyclerAdapter(
 
     override fun onBindViewHolder(holder: DriverViewHolder, position: Int) {
 
-        holder.textView1.text = Driver[position]
-        holder.imageView1.setImageResource(R.mipmap.ic_launcher_round)
+        holder.textView1.text = driver
+        holder.imageView1.setImageResource(e.hashCode())
 
     }
     override fun getItemCount(): Int {
@@ -48,4 +38,5 @@ class DriverViewHolder (v : View):RecyclerView.ViewHolder(v){
 
         v.context.startActivity(intent1)
     }
+
 }

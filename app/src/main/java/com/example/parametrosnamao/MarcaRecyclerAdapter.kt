@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.marca_card_view.view.*
 class MarcaRecyclerAdapter(
     val marca: List<String> = listOf("Weg", "Schineider", "SIEMENS"),
     private val logo: List<Int> = listOf(R.mipmap.logo_weg_foreground, R.mipmap.logo_schinider_foreground, R.mipmap.ic_launcher_round)
-) : Adapter<MarcaRecyclerAdapter.MarcaViewHolder>() {
+) : Adapter<MarcaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarcaViewHolder {
         return MarcaViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.marca_card_view, parent, false))
@@ -28,8 +28,8 @@ class MarcaRecyclerAdapter(
         return 3
     }
 
-
-inner class MarcaViewHolder(val view: View, intent: Intent ): ViewHolder(view){
+}
+class MarcaViewHolder(val view: View): ViewHolder(view){
     val imageView: ImageView = view.findViewById(R.id.logo_view)
     val textView: TextView = view.findViewById(R.id.marca_text)
 
@@ -37,10 +37,8 @@ inner class MarcaViewHolder(val view: View, intent: Intent ): ViewHolder(view){
     init {
         view.setOnClickListener{
             val position1: Int = adapterPosition
-            Intent(view.context, SecondaryActivity::class.java)
-       intent.putExtra("position", position1)
+            val intent = Intent(view.context, SecondaryActivity::class.java).putExtra("key", position1)
             view.context.startActivity(intent)
         }
     }
-}
 }
