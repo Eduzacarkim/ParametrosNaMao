@@ -19,12 +19,12 @@
             android:src="@mipmap/logo_schnider_foreground"
             tools:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <TextView
-        android:id="@+id/marca_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_toEndOf="@id/logo_view"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        <TextView
+            android:id="@+id/marca_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/logo_view"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

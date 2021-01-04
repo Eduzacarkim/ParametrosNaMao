@@ -1,13 +1,27 @@
 package com.example.parametrosnamao
 
- data class TitleInfo (val marca: String, val image: Int)
+
+data class ListaL(
+    val inversor :List<String>,
+    val logoInversor : Int
+)
 
 
-data class Equipamentos (val name: String, val image1: Int){
-    override fun toString(): String {
-        return name
-    }
-}
+
+
+
+
+
+
+
+// data class TitleInfo (val marca: String, val image: Int)
+
+
+//data class Equipamentos (val name: String, val image1: Int){
+//    override fun toString(): String {
+//        return name
+//    }
+//}
 
 
 /*

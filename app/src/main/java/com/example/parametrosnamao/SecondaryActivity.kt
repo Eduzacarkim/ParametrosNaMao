@@ -11,8 +11,7 @@ class SecondaryActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    lateinit var driver: List<String>
-    var logoDriver by Delegates.notNull<Int>()
+
     override fun onCreate(saveInstanceState: Bundle?) {
         super.onCreate(saveInstanceState)
 
@@ -25,7 +24,7 @@ class SecondaryActivity : AppCompatActivity() {
 //        view_driver.layoutManager = LinearLayoutManager()
 //        view_driver.setHasFixedSize(true)
 
-        viewAdapter = DriverRecyclerAdapter(ItemList())
+        viewAdapter = DriverRecyclerAdapter(itemList())
 
         recyclerView = findViewById<RecyclerView>(R.id.view_driver).apply {
 //            setHasFixedSize(true)
@@ -36,29 +35,34 @@ class SecondaryActivity : AppCompatActivity() {
 
     }
 
-    internal fun ItemList(): Array<Any> {
+    fun itemList(): ListaL  {
         val position1 = intent.getSerializableExtra("key") as Int
+        var inversor = listOf("","","")
+        var logoInversor by Delegates.notNull<Int>()
+        val item: ListaL
+
         if (position1 == 0) {
-            driver = listOf(
+            inversor = listOf(
                 "CFW100",
                 "CFW500",
                 "CFW700"
             )
-            logoDriver = R.mipmap.logo_weg_foreground
 
+            logoInversor = R.mipmap.logo_weg_foreground
         } else {
             if (position1 == 1) {
-                driver = listOf(
+
+                inversor = listOf(
                     "ALTIVAR 12",
                     "ALTIVAR EASY 310",
                     "ALTIVAR MACHINE ATV320",
                     "ALTIVAR MACHINE ATV340"
                 )
-                logoDriver = R.mipmap.logo_schinider_foreground
-
+                logoInversor = R.mipmap.logo_schinider_foreground
             } else {
                 if (position1 == 2) {
-                    driver = listOf(
+
+                    inversor = listOf(
                         "SINAMICS V20",
                         "SINAMICS G120C",
                         "SINAMICS G120",
@@ -66,13 +70,13 @@ class SecondaryActivity : AppCompatActivity() {
                         "SINAMICS G110",
                         "SINAMICS G120D"
                     )
-                    logoDriver = R.mipmap.ic_launcher_round
+                    logoInversor = R.mipmap.ic_launcher_round
                 }
             }
+
         }
-        driver
-        logoDriver
-        return arrayOf(listOf(driver), logoDriver)
+        item = ListaL(inversor, logoInversor)
+        return item
     }
 }
 
